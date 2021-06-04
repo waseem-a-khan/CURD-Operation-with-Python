@@ -1,0 +1,19 @@
+table{
+width: 80%;
+font-family:Arial, Helvitica, sans-serif;
+margin-left:10.8%;
+margin-bottom:10px;
+/*border-spacing:40px;*/
+
+}
+th{
+text-align:left;
+}
+
+table, th, td{
+border: 5px solid 	#800000;
+border-collapse:collapse;
+}
+th, td{
+padding:15px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/show.css' %}">
+    <title>Showdata</title>
+    <style type="text/css">
+    *{
+        margin:0;
+        padding:0;
+          }
+          body{
+
+          background-position:center;
+          background-size:cover;
+          font-family:sans-serif;
+          margin-top:40px;
+          }
+        #head{
+            text-align:center;
+            max-width:80%;
+            margin-left:10%;
+            padding:0.5%;
+            background-color: rgb(226,225,223);
+        }
+     .abc{
+                display:block;
+                margin-left:30px;
+                    border-radius:12px;
+                    border:10px solid #36673;
+                    transition:0.25px;
+                    font-size:20px;
+     }
+    </style>
+</head>
+<body>
+    {{mgs}}
+    <h2 id="head">Show All Data</h2>
+    <div class="abc">
+        <form action="/" >
+            <input type="submit" value="<< Back">
+        </form>
+    </div>
+<div class="display">
+    <table>
+        <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>School Name</th>
+        <th>Email Id</th>
+        <th>Address</th>
+        <th>Area Code</th>
+        <th>Phone Number</th>
+        <th>Subject</th>
+        <th>Action</th>
+        </tr>
+        {% for d in data %}
+        <tr>
+            <td>{{d.First_Name}}</td>
+            <td>{{d.Last_name}}</td>
+            <td>{{d.School_name}}</td>
+            <td>{{d.email}}</td>
+            <td>{{d.address}}</td>
+            <td>{{d.Area_code}}</td>
+            <td>{{d.Phone_number}}</td>
+            <td>{{d.Subject}}</td>
+            <td>
+                  <a href="/edit?id={{d.First_Name}}">EDIT</a>
+                  <a href="/delete?id={{d.First_Name}}">DELETE</a>
+            </td>
+        </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>
